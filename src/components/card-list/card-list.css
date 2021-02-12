@@ -5,3 +5,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    margin: 0 auto;
+}

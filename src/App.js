@@ -8,10 +8,10 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://randomuser.me/api/?results=10")
       .then(response => {
-        console.log(response)
-        setData(response.data);
+        console.log(response.data.results)
+        setData(response.data.results);
       });
   }, []);
 
