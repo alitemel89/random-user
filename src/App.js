@@ -17,11 +17,7 @@ function App() {
 
   return (
     <div>
-        <CardList name="Ali">
-        {data.map(item => (
-          <h1 key={item.id}>{item.name}</h1>
-        ))}
-        </CardList>
+        <CardList monsters={data} />
     </div>
   );
 }
