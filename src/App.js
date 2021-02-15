@@ -14,10 +14,10 @@ function App() {
         setData(response.data.results);
       });
   }, []);
-
+  console.log(data);
   return (
-    <div>
-        <CardList monsters={data} />
+    <div className="App">
+      <CardList people={data} />
     </div>
   );
 }
