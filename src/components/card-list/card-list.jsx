@@ -1,9 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./card-list.css";
 import { Card } from "../card/card.jsx";
 
 export const CardList = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredPeople, setFilteredPeople] = useState([]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+
+      setFilteredPeople(props.people.filter(value => {
+        if (searchTerm == "") {
+          return value;
+        } else if (
+          value.name.first.toLowerCase().includes(searchTerm.toLowerCase()) 
+          ||
+          value.name.last.toLowerCase().includes(searchTerm.toLowerCase())
+        ) {
+          return value;
+        }
+      }))
+
+      return ()=> clearTimeout(timer)
+    }, 1000);
+
+
+  }, [searchTerm]);
+
 
   return (
     <>
@@ -14,17 +37,11 @@ export const CardList = (props) => {
         onChange={(event) => setSearchTerm(event.target.value)}
       />
       <div className="card-list">
-        {props.people
-          .filter((value) => {
-            if (searchTerm == "") {
-              return value;
-            } else if (value.name.first.toLowerCase().includes(searchTerm.toLowerCase())) {
-              return value;
-            }
-          })
-          .map((person, index) => (
-            <Card key={index} person={person} />
-          ))}
+        {
+        filteredPeople.map((person, index) => (
+          <Card key={index} person={person} />
+        ))
+        }
       </div>
     </>
   );
