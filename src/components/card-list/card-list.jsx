@@ -6,6 +6,10 @@ export const CardList = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPeople, setFilteredPeople] = useState([]);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setFilteredPeople(
@@ -28,7 +32,7 @@ export const CardList = (props) => {
   return (
     <>
       <h1 className="app-heading">Random User App</h1>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="search person"
