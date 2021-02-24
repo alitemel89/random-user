@@ -1,6 +1,19 @@
-.search {
-    display: flex;
-    justify-content: center;
-    margin: 10px auto;
-    padding: 10px;
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+    font-size: 1.125rem;
+    font-family: 'Public Sans', sans-serif;
+    background: #ccc;
+    font-weight: 300;
 }

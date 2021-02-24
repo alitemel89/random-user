@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./card-list.css";
+import "./card-list.scss";
 import { Card } from "../card/card.jsx";
 
 export const CardList = (props) => {
@@ -20,9 +20,9 @@ export const CardList = (props) => {
           return value;
         }
       }))
-
-      return ()=> clearTimeout(timer)
     }, 1000);
+
+    return ()=> clearTimeout(timer)
 
 
   }, [searchTerm]);
