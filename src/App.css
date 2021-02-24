@@ -14,6 +14,10 @@ body {
     line-height: 1.3;
     font-size: 1.125rem;
     font-family: 'Public Sans', sans-serif;
-    background: #ccc;
+    background: #add8e6;
     font-weight: 300;
+}
+
+.loading {
+    text-align: center;
 }

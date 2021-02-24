@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p className="loading">Loading...</p>
   }
 
   console.log(data);
